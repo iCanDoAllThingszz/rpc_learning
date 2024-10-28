@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("button").click(function(){
+                var json = '[{"uid":"1","uname":"zhangsan","gender":"male"},{"uid":"2","uname":"lisi","gender":"male"}]'
+
+                $.ajax({
+                    url:'/test4',
+                    type:'post',
+                    contentType:'application/json', //请求体中的内容类型
+                    dataType:'json', //响应内容类型
+                    data:json,
+                    success:function (data) {
+                        for (var i=0;i<data.length;i++){
+                            alert(data[i].uid + data[i].uname + data[i].gender)
+                        }
+                    }
+                    });
+            })
+        });
+
+    </script>
+
+</head>
+<body>
+    <button>按钮</button>
+</body>
+</html>
