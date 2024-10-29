@@ -159,7 +159,7 @@ public class Test {
     //跨域:要请求的资源所在的协议、ip、端口和请求方所在的协议、ip、端口中只要有一个不同就是跨域请求
     //同源策略:浏览器默认只允许ajax访问同源(协议、ip、端口都相同)的内容
     //解决同源策略的方法:在服务器的被访问的Controller上添加@CrossOrigin注解即可,表示该Controller允许外部的跨域请求访问。
-    //本质上是在响应头中设置了 Access-Control-Allow-Origin:* 表示任何请求都被允许访问此controller
+    //本质上是在响应头中设置了 Access-Control-Allow-Origin:* 表示任何请求都被允许访问此controller, 加上Access-Control-Allow-Origin:*后, 跨域请求的预检请求就能通过了
 
     //跨域是什么以及如何解决跨域问题：https://zhuanlan.zhihu.com/p/688008398
     //浏览器跨域问题:https://blog.csdn.net/weixin_39510828/article/details/118994285
